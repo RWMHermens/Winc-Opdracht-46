@@ -1,12 +1,11 @@
-const testNum = (number) => {
-  return new Promise((resolve, reject) => {
+const testNum = (number) =>
+  new Promise((resolve, reject) => {
     if (number < 10) {
       resolve(number + " is kleiner dan 10");
     } else {
       reject(number + " is groter dan 10");
     }
   });
-};
 
 testNum(3)
   .then((result) => console.log(result))
@@ -19,8 +18,8 @@ testNum(26)
 const arrayOfWords = ["cucumber", "tomatos", "avocado"];
 const complicatedArray = ["cucumber", 44, true];
 
-const makeAllCaps = (words) => {
-  return new Promise((resolve, reject) => {
+const makeAllCaps = (words) =>
+  new Promise((resolve, reject) => {
     if (
       words.every((word) => {
         return typeof word === "string";
@@ -37,17 +36,15 @@ const makeAllCaps = (words) => {
       reject("Not a string!");
     }
   });
-};
 
-const sortWords = (words) => {
-  return new Promise((resolve, reject) => {
+const sortWords = (words) =>
+  new Promise((resolve, reject) => {
     if (words) {
       resolve(words.sort());
     } else {
       reject("strings only!");
     }
   });
-};
 
 makeAllCaps(arrayOfWords)
   .then(sortWords(arrayOfWords))
